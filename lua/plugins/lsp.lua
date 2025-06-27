@@ -1,0 +1,24 @@
+return {
+  -- config = function()
+  --   -- [[ Configure LSP ]]
+  --   vim.lsp.config('ruff', {
+  --     init_options = {
+  --       settings = {
+  --         -- Ruff language server settings go here
+  --       },
+  --     },
+  --   })
+  --   -- vim.lsp.config('pyrefly', {
+  --   --   init_options = {
+  --   --     settings = {
+  --   --       -- Pyright language server settings go here
+  --   --     },
+  --   --   },
+  --   -- })
+  --
+  --   vim.lsp.enable 'basedpyright'
+  --   vim.lsp.enable 'ruff'
+  --   vim.lsp.enable 'pyrefly'
+  --   vim.lsp.enable 'rust_analyzer'
+  -- end,
+}

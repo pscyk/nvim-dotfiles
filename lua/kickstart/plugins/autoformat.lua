@@ -53,6 +53,9 @@ return {
         if vim.bo.filetype == 'html' then
           return
         end
+        if vim.bo.filetype == 'python' then
+          return
+        end
 
         -- if vim.bo.filetype == 'java' then
         --   return

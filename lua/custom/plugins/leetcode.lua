@@ -1,4 +1,0 @@
-return {
-	'mbledkowski/neuleetcode.vim',
-
-}

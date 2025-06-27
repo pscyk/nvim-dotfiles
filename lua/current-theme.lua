@@ -1,1 +1,2 @@
-vim.cmd("colorscheme evangelion")
+vim.cmd("colorscheme tokyonight")
+vim.opt.background = "dark"
