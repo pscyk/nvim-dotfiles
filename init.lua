@@ -1,10 +1,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require('config.lazy')
+require 'config.lazy'
 require('lazy').setup {
   spec = {
-     { import = 'plugins' },
+    { import = 'plugins' },
   },
   checker = { enabled = true },
 }
@@ -13,7 +13,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -72,12 +72,11 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-
- require('core.options')
- require('core.keymaps')
- require('core.autocmds')
+require 'core.options'
+require 'core.keymaps'
+require 'core.autocmds'
 
 vim.lsp.enable 'basedpyright'
 vim.lsp.enable 'ruff'
-vim.lsp.config('ruff',{})
+vim.lsp.config('ruff', {})
 vim.lsp.enable 'pyrefly'
