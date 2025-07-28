@@ -9,8 +9,8 @@ require('lazy').setup {
   checker = { enabled = true },
 }
 
-require('core.options')
 require('core.keymaps')
 require('core.autocmds')
 require('config.lsp')
 require('config.theme')
+require('core.options')

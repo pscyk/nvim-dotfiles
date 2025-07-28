@@ -39,4 +39,8 @@ vim.o.completeopt = 'menu,menuone,noinsert'
 
 vim.o.termguicolors = true
 vim.cmd("hi TreesitterContextLineNumberBottom gui=underline guisp=Grey")
-
+vim.cmd("hi TreesitterContext guibg=None")
+vim.cmd("hi Comment guibg=None")
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context(vim.v.count1)
+end, { silent = true })
