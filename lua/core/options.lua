@@ -38,3 +38,5 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menu,menuone,noinsert'
 
 vim.o.termguicolors = true
+vim.cmd("hi TreesitterContextLineNumberBottom gui=underline guisp=Grey")
+
