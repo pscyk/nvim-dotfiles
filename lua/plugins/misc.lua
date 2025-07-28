@@ -28,6 +28,7 @@ return {
   { 'j-hui/fidget.nvim', opts = {} },
   {
     'saghen/blink.cmp',
+    version = '1.*',
     dependencies = { 'rafamadriz/friendly-snippets' },
     opts = {
       keymap = { preset = 'super-tab' },
