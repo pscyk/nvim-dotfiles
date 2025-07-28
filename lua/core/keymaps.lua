@@ -54,7 +54,6 @@ vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diag
 
 -- Plugin keymaps
 vim.keymap.set("n", "<Leader>f", ":Neotree toggle=true reveal <CR>", { silent = true })
-vim.keymap.set("n", "<Leader>o", ":Navbuddy<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>sp", ":set spell!<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>rr", ":RunCode<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>rp", ":RunProject<CR>", { silent = true })

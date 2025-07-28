@@ -171,21 +171,21 @@ return {
       },
     },
   },
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    opts = {
-      exclude = { filetypes = { 'terminal', 'dashboard' } },
-      scope = {
-        show_start = true,
-        show_end = false,
-      },
-      -- show_end_of_line = true,
-      -- show_current_context_start = true,
-      -- show_current_context = true,
-      -- show_trailing_blankline_indent = false,
-    },
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   main = 'ibl',
+  --   opts = {
+  --     exclude = { filetypes = { 'terminal', 'dashboard' } },
+  --     scope = {
+  --       show_start = true,
+  --       show_end = false,
+  --     },
+  --     -- show_end_of_line = true,
+  --     -- show_current_context_start = true,
+  --     -- show_current_context = true,
+  --     -- show_trailing_blankline_indent = false,
+  --   },
+  -- },
   { 'numToStr/Comment.nvim', opts = {} },
   { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
   'sirver/ultisnips',
