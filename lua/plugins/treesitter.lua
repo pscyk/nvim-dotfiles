@@ -1,5 +1,8 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
   config = function()
     -- [[ Configure Treesitter ]]
     -- See `:help nvim-treesitter`
@@ -40,17 +43,21 @@ return {
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
             [']f'] = '@function.outer',
+            [']m'] = '@function.outer',
             [']c'] = '@class.outer',
           },
           goto_next_end = {
             [']F'] = '@function.outer',
+            [']M'] = '@function.outer',
             [']C'] = '@class.outer',
           },
           goto_previous_start = {
             ['[f'] = '@function.outer',
+            ['[m'] = '@function.outer',
             ['[c'] = '@class.outer',
           },
           goto_previous_end = {
+            ['[F'] = '@function.outer',
             ['[M'] = '@function.outer',
             ['[C'] = '@class.outer',
           },
