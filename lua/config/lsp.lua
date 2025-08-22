@@ -1,6 +1,7 @@
 vim.lsp.enable('basedpyright')
 vim.lsp.config('basedpyright', require('config.lsp.basedpyright'))
 vim.lsp.enable('ruff')
+vim.lsp.enable('gopls')
 vim.lsp.config('ruff', {})
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('rust_analyzer')
