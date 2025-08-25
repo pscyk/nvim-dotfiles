@@ -12,7 +12,7 @@ return {
     layout = {
       height = 0.9,
       width = 0.9,
-      prompt_position = 'top',    -- or 'top'
+      prompt_position = 'bottom', -- or 'top'
       preview_position = 'right', -- or 'left', 'right', 'top', 'bottom'
       preview_size = 0.75,
     },
