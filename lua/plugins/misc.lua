@@ -3,7 +3,7 @@ return {
   'tpope/vim-sleuth',
   'tpope/vim-surround',
   { 'williamboman/mason.nvim', opts = {} },
-    { -- LSP Configuration & Plugins
+  { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
@@ -25,7 +25,7 @@ return {
     },
   },
 
-  { 'j-hui/fidget.nvim', opts = {} },
+  { 'j-hui/fidget.nvim',       opts = {} },
   {
     'saghen/blink.cmp',
     version = '1.*',
@@ -43,30 +43,59 @@ return {
     },
     opts_extend = { 'sources.default' },
   },
-  {
-    'saghen/blink.pairs',
-    version = '*',
-    dependencies = 'saghen/blink.download',
-    opts = {
-      mappings = {
-        enabled = true,
-        pairs = {},
-      },
-      highlights = {
-        enabled = true,
-        groups = {
-          'BlinkPairsOrange',
-          'BlinkPairsPurple',
-          'BlinkPairsBlue',
-        },
-        matchparen = {
-          enabled = true,
-          group = 'MatchParen',
-        },
-      },
-      debug = false,
-    },
-  },
+  -- {
+  --   'saghen/blink.pairs',
+  --   version = '*', -- (recommended) only required with prebuilt binaries
+  --
+  --   -- download prebuilt binaries from github releases
+  --   dependencies = 'saghen/blink.download',
+  --   -- OR build from source, requires nightly:
+  --   -- https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+  --   -- build = 'cargo build --release',
+  --   -- If you use nix, you can build from source using latest nightly rust with:
+  --   -- build = 'nix run .#build-plugin',
+  --
+  --   --- @module 'blink.pairs'
+  --   --- @type blink.pairs.Config
+  --   opts = {
+  --     mappings = {
+  --       -- you can call require("blink.pairs.mappings").enable()
+  --       -- and require("blink.pairs.mappings").disable()
+  --       -- to enable/disable mappings at runtime
+  --       enabled = true,
+  --       cmdline = true,
+  --       -- or disable with `vim.g.pairs = false` (global) and `vim.b.pairs = false` (per-buffer)
+  --       -- and/or with `vim.g.blink_pairs = false` and `vim.b.blink_pairs = false`
+  --       disabled_filetypes = {},
+  --       -- see the defaults:
+  --       -- https://github.com/Saghen/blink.pairs/blob/main/lua/blink/pairs/config/mappings.lua#L14
+  --       pairs = {},
+  --     },
+  --     highlights = {
+  --       enabled = true,
+  --       -- requires require('vim._extui').enable({}), otherwise has no effect
+  --       cmdline = true,
+  --       groups = {
+  --         'BlinkPairsOrange',
+  --         'BlinkPairsPurple',
+  --         'BlinkPairsBlue',
+  --       },
+  --       unmatched_group = 'BlinkPairsUnmatched',
+  --
+  --       -- highlights matching pairs under the cursor
+  --       matchparen = {
+  --         enabled = true,
+  --         -- known issue where typing won't update matchparen highlight, disabled by default
+  --         cmdline = false,
+  --         -- also include pairs not on top of the cursor, but surrounding the cursor
+  --         include_surrounding = false,
+  --         group = 'BlinkPairsMatchParen',
+  --         priority = 250,
+  --       },
+  --     },
+  --     debug = false,
+  --   }
+  -- },
   {
     'folke/snacks.nvim',
     priority = 1000,
@@ -82,13 +111,13 @@ return {
       quickfile = { enabled = true },
     },
   },
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     'almo7aya/openingh.nvim',
     opts = {},
     keys = {
-      { '<Leader>gr', ':OpenInGHRepo <CR>', mode = 'n', silent = true, noremap = true },
-      { '<Leader>gf', ':OpenInGHFile <CR>', mode = 'n', silent = true, noremap = true },
+      { '<Leader>gr', ':OpenInGHRepo <CR>',      mode = 'n', silent = true, noremap = true },
+      { '<Leader>gf', ':OpenInGHFile <CR>',      mode = 'n', silent = true, noremap = true },
       { '<Leader>gf', ':OpenInGHFileLines <CR>', mode = 'v', silent = true, noremap = true },
     },
   },
@@ -152,15 +181,15 @@ return {
       sections = {
         lualine_b = {
           "branch", {
-            "diagnostics",
-            sources = { "nvim_diagnostic" },
-            symbols = { error = " ", warn = " ", info = " " },
-            -- diagnostics_color = {
-            --   error = { fg = "#151515" },
-            --   warn =  { fg = "#151515" },
-            --   info =  { fg = "#151515" },
-            -- },
-          },
+          "diagnostics",
+          sources = { "nvim_diagnostic" },
+          symbols = { error = " ", warn = " ", info = " " },
+          -- diagnostics_color = {
+          --   error = { fg = "#151515" },
+          --   warn =  { fg = "#151515" },
+          --   info =  { fg = "#151515" },
+          -- },
+        },
         },
         lualine_x = {
           { "encoding", padding = { left = 1, right = 1 }, separator = { left = "░▒▓" } },
@@ -187,7 +216,7 @@ return {
   --   },
   -- },
   { 'numToStr/Comment.nvim', opts = {} },
-  { 'romgrk/barbar.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'romgrk/barbar.nvim',    dependencies = 'nvim-tree/nvim-web-devicons' },
   'sirver/ultisnips',
   {
     'stevearc/conform.nvim',
