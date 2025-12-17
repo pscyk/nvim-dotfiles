@@ -31,11 +31,16 @@ return {
     version = '1.*',
     dependencies = { 'rafamadriz/friendly-snippets' },
     opts = {
-      keymap = { preset = 'super-tab' },
+      keymap = {
+        preset = 'default',
+        ['<Tab>'] = false,
+        ['<C-J>'] = { 'select_and_accept', 'fallback' },
+      },
       appearance = {
         nerd_font_variant = 'mono',
       },
-      completion = { documentation = { auto_show = true } },
+      completion = { documentation = { auto_show = true }, list = { selection = { preselect = false, auto_insert = true } } },
+      signature = { enabled = true },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
@@ -112,15 +117,6 @@ return {
     },
   },
   { 'folke/which-key.nvim',  opts = {} },
-  {
-    'almo7aya/openingh.nvim',
-    opts = {},
-    keys = {
-      { '<Leader>gr', ':OpenInGHRepo <CR>',      mode = 'n', silent = true, noremap = true },
-      { '<Leader>gf', ':OpenInGHFile <CR>',      mode = 'n', silent = true, noremap = true },
-      { '<Leader>gf', ':OpenInGHFileLines <CR>', mode = 'v', silent = true, noremap = true },
-    },
-  },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

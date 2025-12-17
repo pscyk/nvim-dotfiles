@@ -1,34 +1,34 @@
 return {
-	cmd = { "basedpyright-langserver", "--stdio" },
-	filetypes = { "python" },
-	root_markers = {
-		"pyproject.toml",
-		"setup.py",
-		"setup.cfg",
-		"requirements.txt",
-		"Pipfile",
-		"pyrightconfig.json",
-		".git",
-	},
-	settings = {
-		basedpyright = {
-			float = {
-				border = "rounded",
-			},
-			analysis = {
-				autoSearchPaths = true,
-				useLibraryCodeForTypes = true,
-				diagnosticSeverityOverrides = {
-					reportExplicitAny = false,
-					reportUnannotatedClassAttribute = false,
-					reportUnknownVariableType = false,
-					reportUnknownMemberType = false,
-					reportUnusedCallResult = false,
-					reportUnknownArgumentType = false,
-					reportAny = false,
-					reportUnknownLambdaType = false,
-				},
-			},
-		},
-	},
+	-- cmd = { "basedpyright-langserver", "--stdio" },
+	-- filetypes = { "python" },
+	-- root_markers = {
+	-- 	"pyproject.toml",
+	-- 	"setup.py",
+	-- 	"setup.cfg",
+	-- 	"requirements.txt",
+	-- 	"Pipfile",
+	-- 	"pyrightconfig.json",
+	-- 	".git",
+	-- },
+	-- settings = {
+	-- 	basedpyright = {
+	-- 		float = {
+	-- 			border = "rounded",
+	-- 		},
+	-- 		analysis = {
+	-- 			autoSearchPaths = true,
+	-- 			useLibraryCodeForTypes = true,
+	-- 			diagnosticSeverityOverrides = {
+	-- 				reportExplicitAny = false,
+	-- 				reportUnannotatedClassAttribute = false,
+	-- 				reportUnknownVariableType = false,
+	-- 				reportUnknownMemberType = false,
+	-- 				reportUnusedCallResult = false,
+	-- 				reportUnknownArgumentType = false,
+	-- 				reportAny = false,
+	-- 				reportUnknownLambdaType = false,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 }
