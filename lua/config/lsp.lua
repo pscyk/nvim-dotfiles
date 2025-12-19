@@ -1,5 +1,5 @@
--- vim.lsp.enable('basedpyright')
--- vim.lsp.config('basedpyright', require('config.lsp.basedpyright'))
+vim.lsp.enable('basedpyright')
+vim.lsp.config('basedpyright', require('config.lsp.basedpyright'))
 vim.lsp.enable('ruff')
 vim.lsp.enable('ty')
 vim.lsp.enable('zls')
