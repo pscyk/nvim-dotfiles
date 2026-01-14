@@ -4,13 +4,18 @@ vim.g.maplocalleader = ' '
 require('config.lazy')
 require('lazy').setup {
   spec = {
-    { import = 'plugins' },
+    { import = 'plugins.ui' },
+    { import = 'plugins.editor' },
+    { import = 'plugins.lsp' },
+    { import = 'plugins.ai' },
+    { import = 'plugins.tools' },
+    { import = 'plugins.lang' },
   },
   checker = { enabled = true },
 }
 
-require('core.keymaps')
-require('core.autocmds')
+require('config.options')
+require('config.keymaps')
+require('config.autocmds')
 require('config.lsp')
 require('config.theme')
-require('core.options')
