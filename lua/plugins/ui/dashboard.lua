@@ -9,8 +9,109 @@ return {
     local alpha = require 'alpha'
     local oogway = require 'oogway'
 
-    -- Mix of quotes
-    local other_quotes = {
+    -- Dotted ASCII art collection
+    local arts = {
+      -- Oogway from plugin
+      vim.split(oogway.inspire_me(), '\n'),
+
+      -- Ghost
+      {
+        [[                    .:-=+**##%%##**+=-:.                    ]],
+        [[                .-+#%@@@@@@@@@@@@@@@@@@%#*=.                 ]],
+        [[             .=*%@@@@@@@@@@@@@@@@@@@@@@@@@@%*-               ]],
+        [[           .+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=             ]],
+        [[          =#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:           ]],
+        [[        .+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+          ]],
+        [[       .#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+         ]],
+        [[       *@@@@@@@@@@@: .:@@@@@@@@@@@@:. :@@@@@@@@@@@@@:        ]],
+        [[      -@@@@@@@@@@@.    =@@@@@@@@@@+    .@@@@@@@@@@@@@        ]],
+        [[      #@@@@@@@@@@#  ()  %@@@@@@@@%  ()  *@@@@@@@@@@@@.       ]],
+        [[      %@@@@@@@@@@%     .@@@@@@@@@@:     #@@@@@@@@@@@@-       ]],
+        [[      #@@@@@@@@@@@*:.:*@@@@@@@@@@@@#:.:#@@@@@@@@@@@@@.       ]],
+        [[      -@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        ]],
+        [[       *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#         ]],
+        [[        +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-         ]],
+        [[         :%@@@@@@@@@@@@@@@@@@%##%@@@@@@@@@@@@@@@@%.          ]],
+        [[           -%@@@@@@@@@@@@@@@-    =@@@@@@@@@@@@@%-            ]],
+        [[             :*%@@@@@@@@@@@:      +@@@@@@@@@@#:              ]],
+        [[                :=*#%%@@@%.        +@@@%#*=:                 ]],
+      },
+
+      -- Demon/Skull
+      {
+        [[             .::---:::.              ]],
+        [[         .:=+*###%%%%##*+=:.         ]],
+        [[       :=*%@@@@@@@@@@@@@@%#+-        ]],
+        [[     .=*@@@@@@@@@@@@@@@@@@@@@*:      ]],
+        [[    .+%@@@@@@@@@@@@@@@@@@@@@@@#:     ]],
+        [[   .+@@@@@@@@@@@@@@@@@@@@@@@@@@#.    ]],
+        [[   =%@@@@@@@@@@@@@@@@@@@@@@@@@@@=    ]],
+        [[  .#@@@@@@%#*+=-::-=+*#%@@@@@@@@@:   ]],
+        [[  :@@@@@*:    .-==-.    :*@@@@@@%-   ]],
+        [[  -@@@@+   .=*%@@@@%*=.   +@@@@@%-   ]],
+        [[  -@@@@:  .*@@@@@@@@@@*.  :@@@@@%-   ]],
+        [[  :@@@@=   :*%@@@@@@%*:   =@@@@@%-   ]],
+        [[  .#@@@@+:   .:=++=-:   :+@@@@@@#.   ]],
+        [[   =%@@@@@#+=:.    .:=+#@@@@@@@%:    ]],
+        [[   .+@@@@@@@@@%####%@@@@@@@@@@@+     ]],
+        [[    .+%@@@@@@@@@@@@@@@@@@@@@@@+.     ]],
+        [[      :*%@@@@@@@@@@@@@@@@@@@#:       ]],
+        [[        :=*#%@@@@@@@@@@%#*=.         ]],
+        [[            .::----::.               ]],
+      },
+
+      -- Cat
+      {
+        [[       .               .              ]],
+        [[      ":"             ":"             ]],
+        [[    ___:____     |"\/"|              ]],
+        [[  ,'        `.    \  /               ]],
+        [[  |  O        \___/  |               ]],
+        [[~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~    ]],
+      },
+
+      -- Dragon
+      {
+        [[                 ______________                ]],
+        [[           ,===:'.,            `-._            ]],
+        [[                `:.`---.__         `-._        ]],
+        [[                  `:.     `--.         `.      ]],
+        [[                    \.        `.         `.    ]],
+        [[            (,,(,    \.         `.   ____,-`., ]],
+        [[         (,'     `/   \.   ,--.___`.'          ]],
+        [[     ,  ,'  ,--.  `,   \.;'         `          ]],
+        [[      `{D, {    \  :    \;                     ]],
+        [[        V,,'    /  /    //                     ]],
+        [[        j;;    /  ,' ,-//.    ,---.      ,     ]],
+        [[        \;'   /  ,' /  _  \  /  _  \   ,'/     ]],
+        [[              \   `'  / \  `'  / \  `.' /      ]],
+        [[               `.___,'   `googway,'   `googway ]],
+      },
+
+      -- Vim
+      {
+        [[                                              ]],
+        [[         :::    :::  :::::::::::  ::::    ::::  ]],
+        [[        :+:    :+:      :+:      +:+:+: :+:+:+  ]],
+        [[       +:+    +:+      +:+      +:+ +:+:+ +:+   ]],
+        [[      +#+    +:+      +#+      +#+  +:+  +#+    ]],
+        [[     +#+  +#+  +#+   +#+      +#+       +#+     ]],
+        [[     #+#    #+#      #+#      #+#       #+#     ]],
+        [[      ########   ########### ###       ###      ]],
+        [[                                              ]],
+      },
+    }
+
+    -- Quotes collection
+    local quotes = {
+      -- Oogway
+      'Yesterday is history, tomorrow is a mystery, but today is a gift.',
+      'There are no accidents.',
+      'One often meets his destiny on the road he takes to avoid it.',
+      'Your mind is like water. When agitated, it becomes difficult to see.',
+      'If you only do what you can do, you will never be more than you are now.',
+      'Anything is possible when you have inner peace.',
+      -- Programming
       'Talk is cheap. Show me the code. — Linus Torvalds',
       'First, solve the problem. Then, write the code.',
       'Simplicity is the ultimate sophistication. — Leonardo da Vinci',
@@ -23,30 +124,34 @@ return {
       'Deleted code is debugged code.',
       'It works on my machine.',
       'There are only two hard things: cache invalidation and naming things.',
+      'Weeks of coding can save hours of planning.',
+      'Perfection is achieved when there is nothing left to take away.',
+      'The best code is no code at all.',
+      'Copy and paste is a design error. — David Parnas',
+      -- Life
       'Stay hungry. Stay foolish. — Steve Jobs',
       'Done is better than perfect.',
-      'Weeks of coding can save hours of planning.',
+      'The impediment to action advances action. — Marcus Aurelius',
+      'We are what we repeatedly do. Excellence is a habit. — Aristotle',
+      'He who has a why can bear any how. — Nietzsche',
+      'The obstacle is the way. — Marcus Aurelius',
+      'Memento mori.',
+      'This too shall pass.',
+      'Be water, my friend. — Bruce Lee',
+      'The journey of a thousand miles begins with a single step. — Lao Tzu',
     }
 
     math.randomseed(os.time())
 
-    -- 50% chance oogway quote, 50% other
-    local quote_text
-    if math.random() > 0.5 then
-      quote_text = oogway.what_is_your_wisdom()
-    else
-      quote_text = other_quotes[math.random(#other_quotes)]
-    end
-
     local header = {
       type = 'text',
-      val = vim.split(oogway.inspire_me(), '\n'),
+      val = arts[math.random(#arts)],
       opts = { position = 'center', hl = 'AlphaHeader' },
     }
 
     local quote = {
       type = 'text',
-      val = quote_text,
+      val = quotes[math.random(#quotes)],
       opts = { position = 'center', hl = 'AlphaQuote' },
     }
 
@@ -60,7 +165,6 @@ return {
       opts = { margin = 5 },
     }
 
-    -- Peaceful green/gold theme
     vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#98be65' })
     vim.api.nvim_set_hl(0, 'AlphaQuote', { fg = '#ECBE7B', italic = true })
 
