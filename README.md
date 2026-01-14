@@ -1,6 +1,6 @@
 # Neovim Config
 
-Personal Neovim configuration using [lazy.nvim](https://github.com/folke/lazy.nvim) and following [LazyVim](https://www.lazyvim.org/) patterns.
+Personal Neovim configuration with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ## Structure
 
