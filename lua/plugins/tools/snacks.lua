@@ -2,10 +2,32 @@ return {
   'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
+  dependencies = {
+    { 'MaximilianLloyd/ascii.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
+    { 'rubiin/fortune.nvim' },
+  },
   ---@type snacks.Config
-  opts = {
-    bigfile = { enabled = true },
-    dashboard = { enabled = true },
+  opts = function()
+    local ascii = require 'ascii'
+    local fortune = require('fortune').get_fortune()
+
+    return {
+      bigfile = { enabled = true },
+      dashboard = {
+        enabled = true,
+        preset = {
+          header = table.concat(ascii.get_random_global(), '\n'),
+        },
+        sections = {
+          { section = 'header', padding = 2 },
+          {
+            text = table.concat(fortune, '\n'),
+            align = 'center',
+            hl = 'SnacksDashboardFooter',
+            padding = 1,
+          },
+        },
+      },
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
@@ -24,7 +46,8 @@ return {
         -- wo = { wrap = true } -- Wrap notifications
       },
     },
-  },
+  }
+  end,
   keys = {
     -- Top Pickers & Explorer
     {
