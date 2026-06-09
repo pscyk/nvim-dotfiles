@@ -31,8 +31,10 @@ return {
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
+    -- Notifications are handled by noice + nvim-notify; keep snacks notifier off
+    -- to avoid two backends both overriding vim.notify.
     notifier = {
-      enabled = true,
+      enabled = false,
       timeout = 3000,
     },
     picker = { enabled = true },
@@ -80,10 +82,8 @@ return {
     },
     {
       '<leader>n',
-      function()
-        Snacks.picker.notifications()
-      end,
-      desc = 'Notification History',
+      '<cmd>Noice<cr>',
+      desc = 'Notification/Message History',
     },
     {
       '<leader>f',
@@ -487,13 +487,6 @@ return {
       desc = 'Select Scratch Buffer',
     },
     {
-      '<leader>n',
-      function()
-        Snacks.notifier.show_history()
-      end,
-      desc = 'Notification History',
-    },
-    {
       '<leader>bd',
       function()
         Snacks.bufdelete()
@@ -524,9 +517,7 @@ return {
     },
     {
       '<leader>un',
-      function()
-        Snacks.notifier.hide()
-      end,
+      '<cmd>NoiceDismiss<cr>',
       desc = 'Dismiss All Notifications',
     },
     {

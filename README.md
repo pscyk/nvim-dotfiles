@@ -18,17 +18,15 @@ Personal Neovim configuration with [lazy.nvim](https://github.com/folke/lazy.nvi
 │   └── plugins/
 │       ├── ai/              # AI assistants
 │       │   ├── claudecode   # Claude Code integration
-│       │   ├── copilot      # GitHub Copilot
-│       │   ├── codeium      # Codeium
-│       │   └── ...
+│       │   └── copilot      # GitHub Copilot (inline)
 │       ├── editor/          # Editor enhancements
 │       │   ├── treesitter   # Syntax highlighting
 │       │   ├── flash        # Navigation
 │       │   ├── harpoon      # File marks
 │       │   └── ...
 │       ├── lang/            # Language-specific
-│       │   ├── markdown
-│       │   └── vimwiki
+│       │   ├── render-markdown
+│       │   └── img-clip
 │       ├── lsp/             # LSP & completion
 │       │   ├── mason        # LSP installer
 │       │   ├── completion   # blink.cmp
@@ -40,12 +38,16 @@ Personal Neovim configuration with [lazy.nvim](https://github.com/folke/lazy.nvi
 │       │   ├── git          # Fugitive & gitsigns
 │       │   └── ...
 │       └── ui/              # Interface
-│           ├── dashboard    # Alpha startup screen
 │           ├── themes       # Tokyonight
 │           ├── statusline   # Lualine
-│           └── ...
-├── snippets/                # UltiSnips snippets
+│           ├── bufferline   # Barbar
+│           ├── noice        # Cmdline/notifications UI
+│           └── which-key
+├── snippets/                # VSCode-format snippets (loaded by blink.cmp)
 └── spell/                   # Spell files
+
+The dashboard, picker, explorer, terminal, lazygit, and notifier are all
+provided by [snacks.nvim](https://github.com/folke/snacks.nvim) (`tools/snacks.lua`).
 ```
 
 ## Key Bindings
@@ -65,11 +67,15 @@ Leader: `<Space>`
 
 ## LSP Servers
 
-Configured via Mason: `basedpyright`, `ruff`, `lua_ls`, `gopls`, `rust_analyzer`, `zls`
+Enabled via Neovim's native `vim.lsp.enable` (see `lua/config/lsp.lua`), with the
+binaries provided by Mason: `basedpyright`, `ruff`, `ty`, `lua_ls`, `gopls`,
+`rust_analyzer`, `zls`.
 
 ## Requirements
 
-- Neovim 0.10+
-- Git
+- Neovim 0.11+ (native `vim.lsp` config API)
+- Git, [lazygit](https://github.com/jesseduffield/lazygit)
 - A [Nerd Font](https://www.nerdfonts.com/)
-- ripgrep, fd (for telescope/snacks)
+- ripgrep, fd (for snacks pickers)
+- node + npm (GitHub Copilot, basedpyright, prettier)
+- rust + cargo (rust_analyzer, code_runner)
