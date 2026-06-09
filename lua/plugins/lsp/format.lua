@@ -19,6 +19,7 @@ return {
     formatters_by_ft = {
       lua = { 'stylua' },
       yaml = { 'prettier' },
+      markdown = { 'prettier' },
       python = { 'ruff_fix', 'ruff_format' },
     },
     notify_on_error = false,
