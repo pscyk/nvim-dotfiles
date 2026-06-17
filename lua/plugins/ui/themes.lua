@@ -38,17 +38,6 @@ return {
   },
   config = function(_, opts)
     require('tokyonight').setup(opts)
-    -- # ColourScheme
-    vim.cmd.colorscheme 'tokyonight'
-    vim.cmd 'hi TreesitterContext guibg=None'
-    vim.cmd 'hi Comment guibg=None'
-    vim.cmd 'highlight NotifyBackground guibg=#000000'
-    vim.cmd 'highlight LineNrAbove guifg=#808080 guibg=#000000'
-    vim.cmd 'highlight LineNr guifg=#808080 guibg=#000000'
-    vim.cmd 'highlight LineNrBelow guifg=#808080 guibg=#000000'
-    vim.cmd 'highlight SignColumn  guibg=#000000'
-    vim.cmd 'highlight GitSignsAdd  guibg=#000000'
-    vim.cmd 'highlight GitSignsChange  guibg=#000000'
-    vim.cmd 'highlight GitSignsDelete  guibg=#000000'
+    -- Colorscheme + transparency are applied in lua/config/theme.lua.
   end,
 }
